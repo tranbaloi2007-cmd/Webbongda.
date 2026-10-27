@@ -1,0 +1,979 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #1f2937;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    background: linear-gradient(to right, #16a34a, #22c55e);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 72px;
+}
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo i {
+    color: #22c55e;
+    margin-right: 5px;
+}
+
+/* ================= MENU ================= */
+
+.menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.menu > li {
+    position: relative;
+}
+
+
+.menu > li > a {
+    color: white;
+    display: block;
+    padding: 14px 18px;
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.menu > li > a:hover {
+    background: #60a5fa;
+    color: #082f49;
+    border-color: #93c5fd;
+    transform: translateY(-2px);
+}
+
+
+/* ================= MENU CON ================= */
+
+.submenu {
+    position: absolute;
+    top: 72px;
+    left: 0;
+
+    background: white;
+    width: 210px;
+
+    list-style: none;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition: 0.3s;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.submenu a {
+    display: block;
+    color: #333;
+    padding: 14px 18px;
+    border-bottom: 1px solid #eee;
+}
+
+.submenu a:hover {
+    background: #16a34a;
+    color: white;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    height: 360px;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.68),
+            rgba(0, 0, 0, 0.68)
+        ),
+        url("anh19.png");
+
+    background-size: cover;
+    background-position: center;
+
+    /* CĂN NỘI DUNG GIỮA */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 900px;
+
+    /* CĂN KHỐI GIỮA */
+    margin: 0 auto;
+
+    color: white;
+}
+
+/* FOOTBALL EVERYDAY */
+
+.tag {
+    background: #16a34a;
+    padding: 8px 14px;
+    border-radius: 20px;
+
+    display: inline-block;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+/* TIÊU ĐỀ */
+
+.hero h1 {
+    font-size: 60px;
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+
+    text-align: center;
+}
+
+/* MÔ TẢ */
+
+.hero p {
+    max-width: 700px;
+
+    font-size: 19px;
+    line-height: 1.7;
+
+    color: #e5e7eb;
+
+    /* CĂN ĐOẠN VĂN GIỮA */
+    margin: 0 auto 30px;
+
+    text-align: center;
+}
+
+/* NÚT */
+
+.btn {
+    display: inline-block;
+
+    background: #16a34a;
+    color: white;
+
+    padding: 14px 25px;
+
+    border-radius: 6px;
+
+    margin: 5px;
+
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #15803d;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #111;
+}
+
+/* ================= SECTION ================= */
+
+.section {
+    padding: 70px 0;
+}
+
+.gray {
+    background: #e9eef2;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-size: 30px;
+}
+
+.section-title a {
+    color: #16a34a;
+    font-weight: bold;
+}
+
+/* ================= TRẬN ĐẤU ================= */
+
+.match-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.match-card {
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    text-align: center;
+}
+
+.league {
+    font-size: 12px;
+    font-weight: bold;
+
+    color: #16a34a;
+
+    border-bottom: 1px solid #eee;
+
+    padding-bottom: 15px;
+}
+
+.teams {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 30px 0;
+}
+
+.teams > div {
+    width: 33%;
+}
+
+.teams h3 {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.team-logo {
+    width: 65px;
+    height: 65px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+.red {
+    background: #dc2626;
+}
+
+.blue {
+    background: #38bdf8;
+}
+
+.white {
+    background: white;
+
+    color: #111 !important;
+
+    border: 2px solid #ddd;
+}
+
+.barca {
+    background: linear-gradient(
+        90deg,
+        #a50044 50%,
+        #004d98 50%
+    );
+}
+
+.liverpool {
+    background: #c8102e;
+}
+
+.arsenal {
+    background: #ef0107;
+}
+
+.vs strong {
+    display: block;
+
+    font-size: 22px;
+}
+
+.vs span {
+    color: #777;
+
+    font-size: 13px;
+}
+
+.match-btn {
+    display: block;
+    background: #f1f5f9;
+    padding: 12px;
+    color: #111;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.match-btn:hover {
+    background: #16a34a;
+
+    color: white;
+}
+
+/* ================= CLUB ================= */
+
+.club-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.club-card {
+    background: white;
+    padding: 30px 15px;
+    border-radius: 12px;
+    text-align: center;
+    color: #111;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+.club-card:hover {
+    transform: translateY(-8px);
+}
+
+/* LOGO ĐỘI BÓNG */
+.club-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.big-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.club-card p {
+    color: #777;
+    margin-top: 7px;
+}
+
+/* ================= LOGO TRẬN ĐẤU ================= */
+
+.team-image {
+    width: 70px;
+    height: 70px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin: 0 auto 10px;
+}
+
+/* ================= NEWS ================= */
+
+.news-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.news-card {
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.news-card img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 22px;
+}
+
+.news-content span {
+    color: #16a34a;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.news-content h3 {
+    margin: 12px 0;
+
+    font-size: 21px;
+}
+
+.news-content p {
+    color: #666;
+
+    line-height: 1.6;
+
+    margin-bottom: 15px;
+}
+
+.news-content a {
+    color: #16a34a;
+
+    font-weight: bold;
+}
+
+/* ================= TRANG CON ================= */
+
+.page-banner {
+    padding: 100px 20px;
+
+    color: white;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+        ),
+        url("https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1920&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.page-banner h1 {
+    font-size: 48px;
+
+    margin-bottom: 10px;
+}
+
+/* ================= TABLE ================= */
+
+.table-box {
+    background: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+th {
+    background: #081c15;
+
+    color: white;
+}
+
+th,
+td {
+    padding: 16px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background: #f1f5f9;
+}
+
+/* ================= FOOTER ================= */
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #dbeafe; /* xanh dương nhạt */
+    color: #1e3a8a;
+    padding-top: 50px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    padding-bottom: 40px;
+}
+
+.footer-grid h2,
+.footer-grid h3 {
+    margin-bottom: 15px;
+    color: #1e3a8a;
+}
+
+.footer-grid p {
+    color: #475569;
+    line-height: 1.7;
+}
+
+.footer-grid a {
+    display: block;
+    color: #334155;
+    margin: 10px 0;
+}
+
+.footer-grid a:hover {
+    color: #2563eb;
+}
+
+.copyright {
+    border-top: 1px solid #93c5fd;
+    text-align: center;
+    padding: 20px;
+    color: #475569;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 900px) {
+
+    .header {
+        flex-direction: column;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .menu > li > a {
+        padding: 15px 10px;
+    }
+
+    .hero {
+        height: 520px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .match-grid,
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .club-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ========== LOGO ĐỘI BÓNG TRONG BẢNG XẾP HẠNG ========== */
+
+.team-name {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    width: 230px;
+
+    margin: 0 auto;
+}
+
+.team-name img {
+    width: 45px;
+
+    height: 45px;
+
+    object-fit: contain;
+}
+
+.team-name span {
+    font-size: 16px;
+
+    font-weight: 600;
+
+    text-align: left;
+}
+
+.player-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.player-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.player-card:hover {
+    transform: translateY(-6px);
+}
+
+.player-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.player-info {
+    padding: 20px;
+}
+
+.player-info h3 {
+    margin-bottom: 10px;
+}
+
+.player-info p {
+    margin: 7px 0;
+    color: #64748b;
+}
+
+@media (max-width: 768px) {
+    .player-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .player-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* DÒNG TIN TỨC CHẠY NGANG */
+
+.ticker {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-bottom: 2px solid #16a34a;
+    height: 48px;
+    overflow: hidden;
+}
+
+.ticker-title {
+    background: #16a34a;
+    color: white;
+    font-weight: bold;
+    padding: 14px 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.ticker-content {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ticker-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: chayChu 30s linear infinite;
+    color: #1f2937;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.ticker-text:hover {
+    animation-play-state: paused;
+}
+
+@keyframes chayChu {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Hiệu ứng nhấp nháy 2 màu cho Footer */
+footer {
+    animation: footerBlink 3s infinite alternate;
+    transition: all 0.5s ease;
+}
+
+@keyframes footerBlink {
+    0% {
+        background-color: #dbeafe;
+        color: #1e3a8a;
+    }
+
+    100% {
+        background-color: #bbf7d0;
+        color: #14532d;
+    }
+}
+
+/* Tiêu đề trong Footer */
+footer h2,
+footer h3,
+footer strong {
+    animation: textBlink 3s infinite alternate;
+}
+
+@keyframes textBlink {
+    0% {
+        color: #1d4ed8;
+    }
+
+    100% {
+        color: #15803d;
+    }
+}
+
+/* Đường phân cách phía dưới Footer */
+.footer-bottom {
+    transition: background-color 0.5s ease;
+}
+
+/* HIỆU ỨNG ĐỔI MÀU CÁC Ô ĐỘI BÓNG */
+.team-card {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    border-radius: 18px;
+    background: white;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
+    animation: teamGlow 8s linear infinite;
+}
+
+/* Viền đổi màu liên tục */
+@keyframes teamGlow {
+    0% {
+        border-color: #22c55e;
+    }
+    25% {
+        border-color: #facc15;
+    }
+    50% {
+        border-color: #f97316;
+    }
+    75% {
+        border-color: #3b82f6;
+    }
+    100% {
+        border-color: #22c55e;
+    }
+}
+
+/* HIỆU ỨNG VIỀN 4 MÀU CHO Ô ĐỘI BÓNG */
+.team-card,
+.team,
+.team-box,
+.club-card {
+    border: 3px solid transparent !important;
+    animation: doiMauVien 4s linear infinite !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes doiMauVien {
+    0% {
+        border-color: #00cc66;
+    }
+    25% {
+        border-color: #ffeb3b;
+    }
+    50% {
+        border-color: #ff8800;
+    }
+    75% {
+        border-color: #2196f3;
+    }
+    100% {
+        border-color: #00cc66;
+    }
+}
+
+/* Hiệu ứng khi di chuột */
+.team-card:hover,
+.team:hover,
+.team-box:hover,
+.club-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(33, 150, 243, 0.3);
+}
+.tin-moi {
+    animation: doiMau 1.5s infinite alternate;
+}
+
+@keyframes doiMau {
+    0% {
+        background-color: #16a34a;
+        color: white;
+    }
+
+    100% {
+        background-color: #ffb703;
+        color: #102a43;
+    }
+}
+
+/* Thanh tin bóng đá chạy ngang đổi 2 màu */
+.news-ticker {
+    animation: tickerColor 2s infinite alternate;
+}
+
+@keyframes tickerColor {
+    0% {
+        background-color: #16a34a;
+        color: white;
+    }
+
+    100% {
+        background-color: #ffb703;
+        color: #102a43;
+    }
+}
+
+/* Chữ tin chạy vẫn rõ ràng */
+.news-ticker .ticker-content {
+    color: inherit;
+}
+
+/* HIỆU ỨNG 2 MÀU CHO DÒNG TIN CHẠY */
+.ticker {
+    background: #ffffff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.ticker-content {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ticker-text {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: chayTin 25s linear infinite,
+               doiMau 2s infinite alternate;
+    font-weight: bold;
+}
+
+/* Chữ chạy từ phải sang trái */
+@keyframes chayTin {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Nhấp nháy luân phiên xanh và vàng */
+@keyframes doiMau {
+    0% {
+        color: #16a34a;
+    }
+    100% {
+        color: #facc15;
+    }
+}
